@@ -1,7 +1,15 @@
+// Roba da non modificare assolutamente
 export const config = {
   runtime: "edge"
 };
 
+const corsHeaders = {
+  "Access-Control-Allow-Origin": "*",
+  "Access-Control-Allow-Methods": "GET, OPTIONS",
+  "Access-Control-Allow-Headers": "Content-Type"
+};
+
+// Lista dei server modificabile
 const servers = [
     {
       name: "Serverissimo",
@@ -15,6 +23,7 @@ const servers = [
     }
   ];
 
+// Altra roba da modificare solamente in caso di bisogno
 async function checkServer(server, timeoutMs = 800) {
   try {
     const controller = new AbortController();
@@ -48,6 +57,7 @@ export default async function handler() {
         {
           status: 200,
           headers: {
+            ...corsHeaders,
             "Content-Type": "application/json",
             "Cache-Control": "public, s-maxage=60, stale-while-revalidate=30"
           }
@@ -61,6 +71,7 @@ export default async function handler() {
     {
       status: 503,
       headers: {
+        ...corsHeaders,
         "Content-Type": "application/json",
         "Cache-Control": "public, s-maxage=30"
       }

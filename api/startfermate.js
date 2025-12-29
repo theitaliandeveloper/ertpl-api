@@ -43,7 +43,7 @@ export default async function handler() {
         JSON.stringify({
           status: "ok",
           server: server.name,
-          url: server.url.replace("/versione","/"),
+          url: server.url.replace("/versione",""),
         }),
         {
           status: 200,

@@ -3,6 +3,10 @@
     {
       "source": "/nextcloud",
       "destination": "/api/nextcloud"
+    },
+    {
+      "source": "/",
+      "destination": "/api"
     }
   ]
 }

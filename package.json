@@ -2,7 +2,7 @@
   "name": "ertpl-api",
   "version": "1.0.1",
   "private": true,
-  "description": "ER-TPL API to be hosted on Vercel",
+  "description": "API for the ERTPL website to check if the nextcloud mirrors are up and running.",
   "homepage": "https://github.com/theitaliandeveloper/ertpl-api#readme",
   "bugs": {
     "url": "https://github.com/theitaliandeveloper/ertpl-api/issues"

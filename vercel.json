@@ -7,6 +7,18 @@
     {
       "source": "/",
       "destination": "/api"
+    },
+    {
+      "source": "/startfermate",
+      "destination" : "/api/startfermate"
+    },
+    {
+      "source": "/startbus",
+      "destination" : "/api/startbus"
+    },
+    {
+      "source": "/startsopp",
+      "destination" : "/api/startsopp"
     }
   ]
 }

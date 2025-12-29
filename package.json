@@ -1,6 +1,6 @@
 {
   "name": "ertpl-api",
-  "version": "1.0.3",
+  "version": "1.1.0",
   "private": true,
   "description": "API for the ERTPL website to check if the nextcloud mirrors are up and running.",
   "homepage": "https://ertpl.pages.dev",

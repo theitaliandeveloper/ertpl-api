@@ -1,6 +1,17 @@
 {
   "name": "ertpl-api",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "private": true,
+  "description": "ER-TPL API to be hosted on Vercel",
+  "homepage": "https://github.com/theitaliandeveloper/ertpl-api#readme",
+  "bugs": {
+    "url": "https://github.com/theitaliandeveloper/ertpl-api/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/theitaliandeveloper/ertpl-api.git"
+  },
+  "license": "ISC",
+  "author": "The Italian Developer",
   "type": "module"
 }

@@ -5,11 +5,13 @@ export const config = {
 const servers = [
     {
       name: "Serverissimo",
-      url: "https://drive.serverissimo.freeddns.org/status.php"
+      url: "https://drive.serverissimo.freeddns.org/status.php",
+      share: "ffdqobqRg2ezKXt"
     },
     {
       name: "Vichingo455",
-      url: "https://drive.vichingo455.freeddns.org/status.php"
+      url: "https://drive.vichingo455.freeddns.org/status.php",
+      share: "w8Nr4jZN3g6z3pn"
     }
   ];
 
@@ -40,7 +42,8 @@ export default async function handler() {
         JSON.stringify({
           status: "ok",
           server: server.name,
-          url: server.url.replace("/status.php", "")
+          url: server.url.replace("/status.php", ""),
+	  share: server.share
         }),
         {
           status: 200,

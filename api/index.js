@@ -2,15 +2,15 @@ export const config = {
   runtime: "edge"
 };
 
+import pkg from "../package.json";
+
 export default function handler() {
   return new Response(
     JSON.stringify({
-      name: "ER-TPL API",
-      version: "1.0.0",
-      description: "API to check NextCloud servers status for ERTPL",
-      endpoints: {
-        nextcloud: "/nextcloud"
-      }
+      name: pkg.name,
+      version: pkg.version,
+      description: pkg.description,
+      homepage: pkg.homepage
     }),
     {
       headers: {

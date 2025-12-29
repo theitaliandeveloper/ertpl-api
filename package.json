@@ -3,7 +3,7 @@
   "version": "1.0.1",
   "private": true,
   "description": "API for the ERTPL website to check if the nextcloud mirrors are up and running.",
-  "homepage": "https://github.com/theitaliandeveloper/ertpl-api#readme",
+  "homepage": "https://ertpl.pages.dev",
   "bugs": {
     "url": "https://github.com/theitaliandeveloper/ertpl-api/issues"
   },

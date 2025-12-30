@@ -18,6 +18,10 @@ const servers = [
     {
       name: "Vichingo455",
       url: "https://api.vichingo455.qzz.io/fermateapi/versione"
+    },
+    {
+      name: "Vichingo455 Offsite",
+      url: "https://startfermateoffsite.vichingo455.qzz.io/versione"
     }
   ];
 

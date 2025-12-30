@@ -18,6 +18,10 @@ const servers = [
     {
       name: "Vichingo455",
       url: "https://api.vichingo455.qzz.io/infobus/"
+    },
+    {
+      name: "Vichingo455 Offsite",
+      url: "https://startinfobusoffsite.vichingo455.qzz.io/"
     }
   ];
 

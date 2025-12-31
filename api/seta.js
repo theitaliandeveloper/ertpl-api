@@ -13,15 +13,15 @@ const corsHeaders = {
 const servers = [
     {
       name: "Serverissimo",
-      url: "https://setaapi.serverissimo.freeddns.org/"
+      url: "https://setaapi.serverissimo.freeddns.org/allnews"
     },
     {
       name: "Vichingo455",
-      url: "https://api.vichingo455.qzz.io/seta/"
+      url: "https://api.vichingo455.qzz.io/seta/allnews"
     },
     {
       name: "Vichingo455 Offsite",
-      url: "https://setaapioffsite.vichingo455.qzz.io/"
+      url: "https://setaapioffsite.vichingo455.qzz.io/allnews"
     }
   ];
 
@@ -47,7 +47,7 @@ export default async function handler() {
         JSON.stringify({
           status: "ok",
           server: server.name,
-          url: server.url
+          url: server.url.replace("/allnews","/")
         }),
         {
           status: 200,

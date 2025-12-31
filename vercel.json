@@ -19,6 +19,10 @@
     {
       "source": "/startsopp",
       "destination" : "/api/startsopp"
+    },
+    {
+      "source": "/seta",
+      "destination" : "/api/seta"
     }
   ]
 }

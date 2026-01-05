@@ -12,12 +12,12 @@ const corsHeaders = {
 // Lista dei server modificabile
 const servers = [
     {
-      name: "Vichingo455",
-      url: "https://api.vichingo455.qzz.io/fermateapi/versione"
-    },
-    {
       name: "Serverissimo",
       url: "https://startfermate.serverissimo.freeddns.org/versione"
+    },
+    {
+      name: "Vichingo455",
+      url: "https://api.vichingo455.qzz.io/fermateapi/versione"
     },
     {
       name: "Vichingo455 Offsite",

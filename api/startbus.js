@@ -26,11 +26,12 @@ const servers = [
   ];
 
 // Altra roba da modificare solamente in caso di bisogno
-async function checkServer(server, timeoutMs = 3000) {
+async function checkServer(server, timeoutMs = 800) {
   try {
     const controller = new AbortController();
     const timeout = setTimeout(() => controller.abort(), timeoutMs);
     const response = await fetch(server.url, {
+      method: "HEAD",
       signal: controller.signal
     });
     clearTimeout(timeout);

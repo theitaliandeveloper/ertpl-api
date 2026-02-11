@@ -31,6 +31,7 @@ async function checkServer(server, timeoutMs = 3000) {
     const controller = new AbortController();
     const timeout = setTimeout(() => controller.abort(), timeoutMs);
     const response = await fetch(server.url, {
+      Range: "bytes=0-0",
       signal: controller.signal
     });
     clearTimeout(timeout);

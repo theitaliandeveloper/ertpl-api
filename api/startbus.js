@@ -55,7 +55,7 @@ export default async function handler() {
           headers: {
             ...corsHeaders,
             "Content-Type": "application/json",
-            "Cache-Control": "public, s-maxage=60, stale-while-revalidate=30"
+            "Cache-Control": "public, s-maxage=30"
           }
         }
       );
@@ -69,7 +69,7 @@ export default async function handler() {
       headers: {
         ...corsHeaders,
         "Content-Type": "application/json",
-        "Cache-Control": "public, s-maxage=30"
+        "Cache-Control": "no-store"
       }
     }
   );

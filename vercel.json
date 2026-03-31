@@ -23,6 +23,10 @@
     {
       "source": "/seta",
       "destination" : "/api/seta"
+    },
+    {
+      "source": "/tper",
+      "destination" : "/api/tper"
     }
   ]
 }

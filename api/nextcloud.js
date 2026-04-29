@@ -20,16 +20,11 @@ const servers = [
       name: "Vichingo455",
       url: "https://drive.vichingo455.qzz.io/status.php",
       share: "w8Nr4jZN3g6z3pn"
-    },
-    {
-      name: "Vichingo455 Offsite",
-      url: "https://driveoffsite.vichingo455.qzz.io/status.php",
-      share: "b6W9NLF7mpDwZQE"
     }
   ];
 
 // Altra roba da modificare solamente in caso di bisogno
-async function checkServer(server, timeoutMs = 1500) {
+async function checkServer(server, timeoutMs = 5000) {
   try {
     const controller = new AbortController();
     const timeout = setTimeout(() => controller.abort(), timeoutMs);

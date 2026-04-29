@@ -13,15 +13,11 @@ const corsHeaders = {
 const servers = [
     {
       name: "Serverissimo",
-      url: "https://setaapi.serverissimo.freeddns.org/allnews"
+      url: "https://setaapi.serverissimo.com/allnews"
     },
     {
       name: "Vichingo455",
       url: "https://api.vichingo455.qzz.io/seta/allnews"
-    },
-    {
-      name: "Vichingo455 Offsite",
-      url: "https://setaapioffsite.vichingo455.qzz.io/allnews"
     }
   ];
 

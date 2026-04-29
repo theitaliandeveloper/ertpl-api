@@ -13,20 +13,16 @@ const corsHeaders = {
 const servers = [
     {
       name: "Serverissimo",
-      url: "https://startsopp.serverissimo.freeddns.org/"
+      url: "https://corsesopp.startapi.serverissimo.com/"
     },
     {
       name: "Vichingo455",
       url: "https://api.vichingo455.qzz.io/start-corsesopp.json"
-    },
-    {
-      name: "Vichingo455 Offsite",
-      url: "https://startcorsesoppoffsite.vichingo455.qzz.io/"
     }
   ];
 
 // Altra roba da modificare solamente in caso di bisogno
-async function checkServer(server, timeoutMs = 1500) {
+async function checkServer(server, timeoutMs = 5000) {
   try {
     const controller = new AbortController();
     const timeout = setTimeout(() => controller.abort(), timeoutMs);

@@ -12,13 +12,17 @@ const corsHeaders = {
 // Lista dei server modificabile
 const servers = [
     {
+      name: "Serverissimo",
+      url: "https://tperapi.serverissimo.com/"
+    },
+    {
       name: "Vichingo455",
       url: "https://api.vichingo455.qzz.io/tper/"
     }
   ];
 
 // Altra roba da modificare solamente in caso di bisogno
-async function checkServer(server, timeoutMs = 1500) {
+async function checkServer(server, timeoutMs = 5000) {
   try {
     const controller = new AbortController();
     const timeout = setTimeout(() => controller.abort(), timeoutMs);

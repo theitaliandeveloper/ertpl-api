@@ -13,7 +13,7 @@ const corsHeaders = {
 const servers = [
     {
       name: "Serverissimo",
-      url: "https://tperapi.serverissimo.com/"
+      url: "https://tperapi.serverissimo.com"
     },
     {
       name: "Vichingo455",

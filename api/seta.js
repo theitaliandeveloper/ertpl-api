@@ -4,7 +4,7 @@ export const config = {
 };
 
 const corsHeaders = {
-  "Access-Control-Allow-Origin": "*",
+  "Access-Control-Allow-Origin": "https://ertpl.pages.dev",
   "Access-Control-Allow-Methods": "GET, OPTIONS",
   "Access-Control-Allow-Headers": "Content-Type"
 };
@@ -14,6 +14,10 @@ const servers = [
     {
       name: "Serverissimo",
       url: "https://setaapi.serverissimo.com/allnews"
+    },
+    {
+      name: "DaniLab",
+      url: "https://setaapi.daninet.freeddns.org/allnews"
     },
     {
       name: "Vichingo455",

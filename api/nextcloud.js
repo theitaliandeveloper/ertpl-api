@@ -4,18 +4,14 @@ export const config = {
 };
 
 const corsHeaders = {
-  "Access-Control-Allow-Origin": "*",
+  "Access-Control-Allow-Origin": "https://ertpl.pages.dev",
   "Access-Control-Allow-Methods": "GET, OPTIONS",
   "Access-Control-Allow-Headers": "Content-Type"
 };
 
 // Lista dei server modificabile
+// TODO: Aggiungere gli altri server quando la share sara' pronta
 const servers = [
-    {
-      name: "Serverissimo",
-      url: "https://drive.serverissimo.freeddns.org/status.php",
-      share: "ffdqobqRg2ezKXt"
-    },
     {
       name: "Vichingo455",
       url: "https://drive.vichingo455.qzz.io/status.php",

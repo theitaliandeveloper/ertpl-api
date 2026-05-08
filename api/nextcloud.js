@@ -13,6 +13,11 @@ const corsHeaders = {
 // TODO: Aggiungere gli altri server quando la share sara' pronta
 const servers = [
     {
+      name: "Serverissimo",
+      url: "https://drive.serverissimo.com/status.php",
+      share: "ny8sLxGqrsmrcSZ"
+    },
+    {
       name: "Vichingo455",
       url: "https://drive.vichingo455.qzz.io/status.php",
       share: "w8Nr4jZN3g6z3pn"

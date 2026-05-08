@@ -16,7 +16,7 @@ const servers = [
     {
       name: "Serverissimo",
       url: "https://drive.serverissimo.com/status.php",
-      share: "ny8sLxGqrsmrcSZ"
+      share: "G7eqeT5W6P4Mapt"
     },
     {
       name: "Vichingo455",

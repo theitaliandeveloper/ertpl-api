@@ -14,15 +14,18 @@ const corsHeaders = {
 const servers = [
     {
       name: "Serverissimo",
-      url: "https://dbiface.serverissimo.com/health"
+      url: "https://dbiface.serverissimo.com/health",
+      apiEndpoint: "/api"
     },
     {
       name: "DaniLab",
-      url: "https://ertpl-db.daninet.freeddns.org/health"
+      url: "https://ertpl-db.daninet.freeddns.org/health",
+      apiEndpoint: "/api"
     },
     {
       name: "Vichingo455",
-      url: "https://api.vichingo455.qzz.io/ertpl/health"
+      url: "https://api.vichingo455.qzz.io/ertpl/health",
+      apiEndpoint: ""
     }
   ];
 
@@ -53,7 +56,7 @@ export default async function handler() {
         JSON.stringify({
           status: "ok",
           server: server.name,
-          url: server.url.replace("/health","")
+          url: server.url.replace("/health",server.apiEndpoint)
         }),
         {
           status: 200,

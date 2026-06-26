@@ -1,12 +1,12 @@
 {
   "rewrites": [
     {
-      "source": "/nextcloud",
-      "destination": "/api/nextcloud"
-    },
-    {
       "source": "/",
       "destination": "/api"
+    },
+    {
+      "source": "/nextcloud",
+      "destination": "/api/nextcloud"
     },
     {
       "source": "/startfermate",
@@ -27,6 +27,10 @@
     {
       "source": "/tper",
       "destination" : "/api/tper"
+    },
+    {
+      "source": "/mezzi",
+      "destination" : "/api/mezzi"
     }
   ]
 }

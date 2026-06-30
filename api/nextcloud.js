@@ -20,7 +20,7 @@ const servers = [
     },
     {
       name: "Vichingo455",
-      url: "https://drive.vichingo455.qzz.io/status.php",
+      url: "https://drive.vichingo455.com/status.php",
       share: "w8Nr4jZN3g6z3pn"
     }
   ];

@@ -22,7 +22,7 @@ const servers = [
     },
     {
       name: "Vichingo455",
-      url: "https://api.vichingo455.qzz.io/tper/"
+      url: "https://api.vichingo455.com/tper/"
     }
   ];
 

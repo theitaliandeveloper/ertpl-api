@@ -24,7 +24,7 @@ const servers = [
     },
     {
       name: "Vichingo455",
-      url: "https://api.vichingo455.qzz.io/ertpl/health",
+      url: "https://api.vichingo455.com/ertpl/health",
       apiEndpoint: ""
     }
   ];

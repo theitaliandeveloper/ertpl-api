@@ -14,15 +14,15 @@ const corsHeaders = {
 const servers = [
     {
       name: "Serverissimo",
-      url: "https://corsesopp.startapi.serverissimo.com/"
+      url: "https://corsesopp.startapi.serverissimo.com/versione"
     },
     {
       name: "DaniLab",
-      url: "https://startsopp.daninet.freeddns.org/"
+      url: "https://startsopp.daninet.freeddns.org/versione"
     },
     {
       name: "Vichingo455",
-      url: "https://api.vichingo455.com/start-corsesopp.json"
+      url: "https://api.vichingo455.com/start-corsesopp.json/versione"
     }
   ];
 
@@ -32,13 +32,14 @@ async function checkServer(server, timeoutMs = 5000) {
     const controller = new AbortController();
     const timeout = setTimeout(() => controller.abort(), timeoutMs);
     const response = await fetch(server.url, {
-      headers: {
-        Range: "bytes=0-0"
-      },
       signal: controller.signal
     });
     clearTimeout(timeout);
-    return response.ok;
+    if (!response.ok) return false;
+    const contentType = response.headers.get("content-type");
+    if (!contentType?.includes("application/json")) return false;
+    await response.json();
+    return true;
   } catch {
     return false;
   }
@@ -51,7 +52,7 @@ export default async function handler() {
         JSON.stringify({
           status: "ok",
           server: server.name,
-          url: server.url
+          url: server.url.replace("/versione","")
         }),
         {
           status: 200,

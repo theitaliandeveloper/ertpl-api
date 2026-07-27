@@ -18,11 +18,11 @@ const servers = [
     },
     {
       name: "DaniLab",
-      url: "https://tperapi.daninet.freeddns.org/"
+      url: "https://tperapi.daninet.freeddns.org"
     },
     {
       name: "Vichingo455",
-      url: "https://api.vichingo455.com/tper/"
+      url: "https://api.vichingo455.com/tper"
     }
   ];
 

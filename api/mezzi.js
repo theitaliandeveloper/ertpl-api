@@ -30,7 +30,7 @@ const servers = [
   ];
 
 // Altra roba da modificare solamente in caso di bisogno
-async function checkServer(server, timeoutMs = 5000) {
+async function checkServer(server, timeoutMs = 1500) {
   try {
     const controller = new AbortController();
     const timeout = setTimeout(() => controller.abort(), timeoutMs);

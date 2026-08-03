@@ -5,6 +5,10 @@
       "destination": "/api"
     },
     {
+      "source": "/cdn",
+      "destination": "/api/cdn"
+    },
+    {
       "source": "/nextcloud",
       "destination": "/api/nextcloud"
     },

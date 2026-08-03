@@ -32,11 +32,11 @@ const corsHeaders = {
 const servers = [
     {
       name: "Serverissimo",
-      url: "https://ertpl-cdn.serverissimo.com/",
+      url: "https://ertpl-cdn.serverissimo.com/health"
     },
     {
       name: "Vichingo455",
-      url: "https://ertpl-content.vichingo455.com/",
+      url: "https://ertpl-content.vichingo455.com/health"
     }
   ];
 
@@ -52,7 +52,7 @@ async function checkServer(server, timeoutMs = 1500) {
 
     clearTimeout(timeout);
 
-    if (!response.ok && response.status != 400) return false;
+    if (!response.ok) return false;
     return true;
   } catch {
     return false;
@@ -66,7 +66,7 @@ export default async function handler() {
         JSON.stringify({
           status: "ok",
           server: server.name,
-          url: server.url.replace("/", "")
+          url: server.url.replace("/health", "")
         }),
         {
           status: 200,

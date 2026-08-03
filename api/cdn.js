@@ -29,7 +29,6 @@ const corsHeaders = {
 };
 
 // Lista dei server modificabile
-// TODO: Aggiungere gli altri server quando la share sara' pronta
 const servers = [
     {
       name: "Serverissimo",

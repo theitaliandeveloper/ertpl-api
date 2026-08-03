@@ -9,10 +9,6 @@
       "destination": "/api/cdn"
     },
     {
-      "source": "/nextcloud",
-      "destination": "/api/nextcloud"
-    },
-    {
       "source": "/startfermate",
       "destination" : "/api/startfermate"
     },

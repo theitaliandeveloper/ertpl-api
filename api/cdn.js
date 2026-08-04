@@ -35,6 +35,10 @@ const servers = [
       url: "https://ertpl-cdn.serverissimo.com/health"
     },
     {
+      name: "DaniLab",
+      url: "https://ertpl-cdn.daninet.freeddns.org/health"
+    },
+    {
       name: "Vichingo455",
       url: "https://ertpl-content.vichingo455.com/health"
     }

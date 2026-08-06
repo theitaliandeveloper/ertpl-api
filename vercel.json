@@ -5,8 +5,8 @@
       "destination": "/api"
     },
     {
-      "source": "/nextcloud",
-      "destination": "/api/nextcloud"
+      "source": "/cdn",
+      "destination": "/api/cdn"
     },
     {
       "source": "/startfermate",

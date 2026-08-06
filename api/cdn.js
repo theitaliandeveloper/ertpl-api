@@ -29,17 +29,18 @@ const corsHeaders = {
 };
 
 // Lista dei server modificabile
-// TODO: Aggiungere gli altri server quando la share sara' pronta
 const servers = [
     {
+      name: "DaniLab",
+      url: "https://ertpl-cdn.daninet.freeddns.org/health"
+    },
+    {
       name: "Serverissimo",
-      url: "https://drive.serverissimo.com/status.php",
-      share: "G7eqeT5W6P4Mapt"
+      url: "https://ertpl-cdn.serverissimo.com/health"
     },
     {
       name: "Vichingo455",
-      url: "https://drive.vichingo455.com/status.php",
-      share: "w8Nr4jZN3g6z3pn"
+      url: "https://ertpl-content.vichingo455.com/health"
     }
   ];
 
@@ -56,9 +57,7 @@ async function checkServer(server, timeoutMs = 1500) {
     clearTimeout(timeout);
 
     if (!response.ok) return false;
-
-    const data = await response.json();
-    return data.installed === true && data.maintenance === false;
+    return true;
   } catch {
     return false;
   }
@@ -71,8 +70,7 @@ export default async function handler() {
         JSON.stringify({
           status: "ok",
           server: server.name,
-          url: server.url.replace("/status.php", ""),
-	  share: server.share
+          url: server.url.replace("/health", "")
         }),
         {
           status: 200,

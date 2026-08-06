@@ -31,12 +31,12 @@ const corsHeaders = {
 // Lista dei server modificabile
 const servers = [
     {
-      name: "Serverissimo",
-      url: "https://ertpl-cdn.serverissimo.com/health"
-    },
-    {
       name: "DaniLab",
       url: "https://ertpl-cdn.daninet.freeddns.org/health"
+    },
+    {
+      name: "Serverissimo",
+      url: "https://ertpl-cdn.serverissimo.com/health"
     },
     {
       name: "Vichingo455",

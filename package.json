@@ -1,6 +1,6 @@
 {
   "name": "ertpl-api",
-  "version": "1.6.0-BETA4",
+  "version": "1.6.0",
   "private": true,
   "description": "API for High Availability for ER-TPL website.",
   "homepage": "https://ertpl.pages.dev",

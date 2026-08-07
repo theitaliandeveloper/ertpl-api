@@ -32,11 +32,11 @@ const corsHeaders = {
 const servers = [
     {
       name: "DaniLab",
-      url: "https://startrss.daninet.freeddns.org/"
+      url: "https://startrss.daninet.freeddns.org"
     },
     {
       name: "Vichingo455",
-      url: "https://api.vichingo455.com/startrss/"
+      url: "https://api.vichingo455.com/startrss"
     }
   ];
 

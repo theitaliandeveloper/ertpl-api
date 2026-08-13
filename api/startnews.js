@@ -31,6 +31,10 @@ const corsHeaders = {
 // Lista dei server modificabile
 const servers = [
     {
+      name: "Serverissimo",
+      url: "https://rss.startapi.serverissimo.com"
+    },
+    {
       name: "DaniLab",
       url: "https://startrss.daninet.freeddns.org"
     },

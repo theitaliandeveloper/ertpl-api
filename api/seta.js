@@ -32,15 +32,15 @@ const corsHeaders = {
 const servers = [
     {
       name: "Serverissimo",
-      url: "https://setaapi.serverissimo.com/allnews"
+      url: "https://setaapi.serverissimo.com/health"
     },
     {
       name: "DaniLab",
-      url: "https://setaapi.daninet.freeddns.org/allnews"
+      url: "https://setaapi.daninet.freeddns.org/health"
     },
     {
       name: "Vichingo455",
-      url: "https://api.vichingo455.com/seta/allnews"
+      url: "https://api.vichingo455.com/seta/health"
     }
   ];
 
@@ -69,7 +69,7 @@ export default async function handler() {
         JSON.stringify({
           status: "ok",
           server: server.name,
-          url: server.url.replace("/allnews","")
+          url: server.url.replace("/health","")
         }),
         {
           status: 200,

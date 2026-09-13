@@ -9,12 +9,8 @@
       "destination": "/api/cdn"
     },
     {
-      "source": "/startfermate",
-      "destination" : "/api/startfermate"
-    },
-    {
-      "source": "/startbus",
-      "destination" : "/api/startbus"
+      "source": "/start",
+      "destination" : "/api/start"
     },
     {
       "source": "/startsopp",

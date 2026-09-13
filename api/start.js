@@ -32,15 +32,15 @@ const corsHeaders = {
 const servers = [
     {
       name: "Serverissimo",
-      url: "https://fermate.startapi.serverissimo.com/versione"
+      url: "https://startapi.serverissimo.com/health"
     },
     {
       name: "DaniLab",
-      url: "https://startfermate.daninet.freeddns.org/versione"
+      url: "https://startapi.daninet.freeddns.org/health"
     },
     {
       name: "Vichingo455",
-      url: "https://api.vichingo455.com/fermateapi/versione"
+      url: "https://api.vichingo455.com/start/health"
     }
   ];
 
@@ -50,9 +50,6 @@ async function checkServer(server, timeoutMs = 1500) {
     const controller = new AbortController();
     const timeout = setTimeout(() => controller.abort(), timeoutMs);
     const response = await fetch(server.url, {
-      headers: {
-        Range: "bytes=0-0"
-      },
       signal: controller.signal
     });
     clearTimeout(timeout);
@@ -69,7 +66,7 @@ export default async function handler() {
         JSON.stringify({
           status: "ok",
           server: server.name,
-          url: server.url.replace("/versione",""),
+          url: server.url.replace("/health","")
         }),
         {
           status: 200,

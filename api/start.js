@@ -53,11 +53,7 @@ async function checkServer(server, timeoutMs = 1500) {
       signal: controller.signal
     });
     clearTimeout(timeout);
-    if (!response.ok) return false;
-    const contentType = response.headers.get("content-type");
-    if (!contentType?.includes("application/json")) return false;
-    await response.json();
-    return true;
+    return response.ok;
   } catch {
     return false;
   }

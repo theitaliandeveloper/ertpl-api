@@ -17,10 +17,6 @@
       "destination" : "/api/startsopp"
     },
     {
-      "source": "/startnews",
-      "destination" : "/api/startnews"
-    },
-    {
       "source": "/seta",
       "destination" : "/api/seta"
     },

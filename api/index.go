@@ -34,7 +34,7 @@ func IndexHandler(w http.ResponseWriter, r *http.Request) {
 
 	pkg := PackageInfo{
 		Name:        "ertpl-api",
-		Version:     "2.0.0-B1",
+		Version:     "2.0.0",
 		Description: "API for High Availability for ER-TPL website.",
 		Homepage:    "https://ertpl.pages.dev",
 	}

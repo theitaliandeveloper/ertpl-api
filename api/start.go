@@ -1,4 +1,22 @@
-package handler
+/*
+ER-TPL High Availability API
+Copyright (C) 2025-26 Vichingo455
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU Affero General Public License as published
+by the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU Affero General Public License for more details.
+
+You should have received a copy of the GNU Affero General Public License
+along with this program.  If not, see <https://www.gnu.org/licenses/>.
+*/
+
+package api
 
 import (
 	"context"
@@ -8,18 +26,18 @@ import (
 	"time"
 )
 
-type Server struct {
+type ServerStart struct {
 	Name string
 	URL  string
 }
 
-var servers = []Server{
-	{Name: "Serverissimo", URL: "https://setaapi.serverissimo.com/health"},
-	{Name: "DaniLab", URL: "https://setaapi.daninet.freeddns.org/health"},
-	{Name: "Vichingo455", URL: "https://api.vichingo455.com/seta/health"},
+var serversStart = []ServerStart{
+	{Name: "Serverissimo", URL: "https://startapi.serverissimo.com/health"},
+	{Name: "DaniLab", URL: "https://startapi.daninet.freeddns.org/health"},
+	{Name: "Vichingo455", URL: "https://api.vichingo455.com/start/health"},
 }
 
-func checkServer(server Server) bool {
+func checkServerStart(server ServerStart) bool {
 	ctx, cancel := context.WithTimeout(context.Background(), 1500*time.Millisecond)
 	defer cancel()
 
@@ -27,7 +45,6 @@ func checkServer(server Server) bool {
 	if err != nil {
 		return false
 	}
-	req.Header.Set("Range", "bytes=0-0")
 
 	client := &http.Client{}
 	resp, err := client.Do(req)
@@ -39,7 +56,7 @@ func checkServer(server Server) bool {
 	return resp.StatusCode >= 200 && resp.StatusCode < 300
 }
 
-func Handler(w http.ResponseWriter, r *http.Request) {
+func StartHandler(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Access-Control-Allow-Origin", "*")
 	w.Header().Set("Access-Control-Allow-Methods", "GET, OPTIONS")
 	w.Header().Set("Access-Control-Allow-Headers", "Content-Type")
@@ -51,8 +68,8 @@ func Handler(w http.ResponseWriter, r *http.Request) {
 
 	w.Header().Set("Content-Type", "application/json")
 
-	for _, server := range servers {
-		if checkServer(server) {
+	for _, server := range serversStart {
+		if checkServerStart(server) {
 			w.Header().Set("Cache-Control", "public, s-maxage=30")
 			w.WriteHeader(http.StatusOK)
 			json.NewEncoder(w).Encode(map[string]string{

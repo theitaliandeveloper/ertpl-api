@@ -1,4 +1,22 @@
-package handler
+/*
+ER-TPL High Availability API
+Copyright (C) 2025-26 Vichingo455
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU Affero General Public License as published
+by the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU Affero General Public License for more details.
+
+You should have received a copy of the GNU Affero General Public License
+along with this program.  If not, see <https://www.gnu.org/licenses/>.
+*/
+
+package api
 
 import (
 	"context"
@@ -8,19 +26,19 @@ import (
 	"time"
 )
 
-type Server struct {
+type ServerMezzi struct {
 	Name        string
 	URL         string
 	APIEndpoint string
 }
 
-var servers = []Server{
+var serversMezzi = []ServerMezzi{
 	{Name: "Serverissimo", URL: "https://mezziapi.serverissimo.com/health", APIEndpoint: "/api"},
 	{Name: "DaniLab", URL: "https://ertpl-db.daninet.freeddns.org/health", APIEndpoint: "/api"},
 	{Name: "Vichingo455", URL: "https://api.vichingo455.com/ertpl/health", APIEndpoint: ""},
 }
 
-func checkServer(server Server) bool {
+func checkServerMezzi(server ServerMezzi) bool {
 	ctx, cancel := context.WithTimeout(context.Background(), 1500*time.Millisecond)
 	defer cancel()
 
@@ -51,7 +69,7 @@ func checkServer(server Server) bool {
 	return data.Status == "ok"
 }
 
-func Handler(w http.ResponseWriter, r *http.Request) {
+func MezziHandler(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Access-Control-Allow-Origin", "*")
 	w.Header().Set("Access-Control-Allow-Methods", "GET, OPTIONS")
 	w.Header().Set("Access-Control-Allow-Headers", "Content-Type")
@@ -63,8 +81,8 @@ func Handler(w http.ResponseWriter, r *http.Request) {
 
 	w.Header().Set("Content-Type", "application/json")
 
-	for _, server := range servers {
-		if checkServer(server) {
+	for _, server := range serversMezzi {
+		if checkServerMezzi(server) {
 			w.Header().Set("Cache-Control", "public, s-maxage=30")
 			w.WriteHeader(http.StatusOK)
 			json.NewEncoder(w).Encode(map[string]string{

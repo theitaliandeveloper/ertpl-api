@@ -23,6 +23,7 @@ import (
 	"net/http"
 	"os"
 	"ertpl-api/api"
+	"ertpl-api/utils"
 )
 
 func main() {
@@ -30,16 +31,16 @@ func main() {
 
 	// Vercel routes traffic according to vercel.json rewrites, 
 	// which rewrites everything to /api/*
-	mux.HandleFunc("/api/index", api.IndexHandler)
-	mux.HandleFunc("/api/cdn", api.CDNHandler)
-	mux.HandleFunc("/api/mezzi", api.MezziHandler)
-	mux.HandleFunc("/api/seta", api.SetaHandler)
-	mux.HandleFunc("/api/start", api.StartHandler)
-	mux.HandleFunc("/api/startsopp", api.StartsoppHandler)
-	mux.HandleFunc("/api/tper", api.TperHandler)
+	mux.HandleFunc("/api/index", utils.WithCORS(api.IndexHandler))
+	mux.HandleFunc("/api/cdn", utils.WithCORS(api.CDNHandler))
+	mux.HandleFunc("/api/mezzi", utils.WithCORS(api.MezziHandler))
+	mux.HandleFunc("/api/seta", utils.WithCORS(api.SetaHandler))
+	mux.HandleFunc("/api/start", utils.WithCORS(api.StartHandler))
+	mux.HandleFunc("/api/startsopp", utils.WithCORS(api.StartsoppHandler))
+	mux.HandleFunc("/api/tper", utils.WithCORS(api.TperHandler))
 	
 	// Fallback for root /api
-	mux.HandleFunc("/api", api.IndexHandler)
+	mux.HandleFunc("/api", utils.WithCORS(api.IndexHandler))
 
 	port := os.Getenv("PORT")
 	if port == "" {

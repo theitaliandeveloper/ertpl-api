@@ -37,7 +37,7 @@ var serversTper = []ServerTper{
 }
 
 func checkServerTper(server ServerTper) bool {
-	ctx, cancel := context.WithTimeout(context.Background(), 1500*time.Millisecond)
+	ctx, cancel := context.WithTimeout(context.Background(), 2500*time.Millisecond)
 	defer cancel()
 
 	req, err := http.NewRequestWithContext(ctx, "GET", server.URL, nil)

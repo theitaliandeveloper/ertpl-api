@@ -35,7 +35,7 @@ type ServerMezzi struct {
 var serversMezzi = []ServerMezzi{
 	{Name: "Serverissimo", URL: "https://mezziapi.serverissimo.com/health", APIEndpoint: ""},
 	{Name: "DaniLab", URL: "https://ertpl-db.daninet.freeddns.org/health", APIEndpoint: ""},
-	{Name: "Vichingo455", URL: "https://api.vichingo455.com/ertpl/health", APIEndpoint: ""},
+	{Name: "Vichingo455", URL: "https://api.vichingo455.com/mezziapi/health", APIEndpoint: ""},
 }
 
 func checkServerMezzi(server ServerMezzi) bool {
